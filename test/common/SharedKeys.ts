@@ -1,3 +1,3 @@
-export const SharedKeys = {
-    username: "username"
+export enum SharedKeys {
+    username = "username"
 }
