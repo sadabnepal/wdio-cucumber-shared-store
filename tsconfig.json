@@ -7,6 +7,9 @@
             ],
             "@Helper/*": [
                 "./test/helper/*"
+            ],
+            "@Common/*": [
+                "./test/common/*"
             ]
         },
         "types": [

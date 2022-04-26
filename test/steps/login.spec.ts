@@ -1,10 +1,11 @@
+import { SharedKeys } from '@Common/SharedKeys';
 import { getValueFromSharedStore } from '@Helper/datahandler';
 import loginPage from '@Pages/login.page';
 import { Then, When } from '@wdio/cucumber-framework';
 
 When(/^I login with username and (.+)$/, async (password: string) => {
     // reading data from shared storre with helper function
-    const username = await getValueFromSharedStore("username")
+    const username = await getValueFromSharedStore(SharedKeys.username)
     await loginPage.login(username, password)
 });
 
