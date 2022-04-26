@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@Pages/*": [
+                "./test/pages/*"
+            ],
+            "@Helper/*": [
+                "./test/helper/*"
+            ]
+        },
+        "types": [
+            "node",
+            "webdriverio/async",
+            "@wdio/cucumber-framework",
+            "expect-webdriverio"
+        ],
+        "target": "es2019",
+        "moduleResolution": "node"
+    }
+}
