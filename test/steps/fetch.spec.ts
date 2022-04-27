@@ -1,10 +1,12 @@
 import { SharedKeys } from '@Common/SharedKeys';
-import { setValueToSharedStore } from '@Helper/datahandler';
+import { setValueToSharedStore } from '@Helper/datastore';
 import loginPage from '@Pages/login.page';
-import { Given } from '@wdio/cucumber-framework';
+import { Given, When } from '@wdio/cucumber-framework';
 
 Given(/^I am on the login page$/, async () => {
     await loginPage.open()
-    //Fetching username from page and passing to shared store
-    setValueToSharedStore(SharedKeys.username, await loginPage.username.getText())
 });
+
+When(/^I fetch username from the login page instruction$/, async () => {
+    setValueToSharedStore(SharedKeys.username, await loginPage.username.getText())
+})

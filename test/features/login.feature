@@ -1,12 +1,19 @@
 Feature: The Internet Guinea Login screen
 
-  Scenario Outline: Test data sharing between steps
-
+  Background: Open App
     Given I am on the login page
-    When I login with username and <password>
-    Then I should see a flash message saying <message>
+
+  Scenario Outline: Test data sharing between steps
+    When I fetch username from the login page instruction
+    Then I validate value fetched is <username>
 
     Examples:
-      | password             | message                        |
-      | SuperSecretPassword! | You logged into a secure area! |
-      | barfoo               | Your password is invalid!      |
+      | username |
+      | tomsmith |
+
+  Scenario Outline: Test data sharing between scenarios
+    Then I validate value fetched is <username>
+
+    Examples:
+      | username |
+      | tomsmith |
